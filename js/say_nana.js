@@ -1,6 +1,6 @@
-const sayForm = document.querySelector(".say_nana");
+const sayForm = document.querySelector("#feedContainer");
 const sayInput = sayForm.querySelector("input");
-const contents = document.querySelector("#Contents");
+const button = sayForm.querySelector("button");
 
 const SAY_NANA_KEY = "saynana";
 
@@ -19,11 +19,13 @@ function deleteSayNana(event) {
   saveSayNana();
 }
 
-function paintSayNana(sayNana) {
+function paintSayNana({ id, text, parentElement }) {
   const List = document.createElement("div");
-  List.id = sayNana.id;
+  List.id = id;
+
   const span = document.createElement("span");
-  span.innerText = sayNana.text;
+  span.innerText = text;
+
   const button = document.createElement("button", deleteSayNana);
   button.innerText = "✖️";
   button.addEventListener("click", deleteSayNana);
@@ -31,18 +33,20 @@ function paintSayNana(sayNana) {
   List.appendChild(span);
   List.appendChild(button);
 
-  contents.appendChild(List);
+  parentElement.appendChild(List);
 }
 
 function handleSayNana(event) {
   event.preventDefault();
 
   const newSay = sayInput.value;
+  const parentElement = event.target.parentElement;
 
   sayInput.value = "";
   const newSayObj = {
     text: newSay,
     id: Date.now(),
+    parentElement: parentElement,
   };
 
   sayNanaList.push(newSayObj);
