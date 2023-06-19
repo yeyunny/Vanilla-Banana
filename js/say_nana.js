@@ -15,7 +15,7 @@ function deleteSayNana(event) {
 
   List.remove();
 
-  sayNanaList = sayNanaList.filter((say) => say.id !== parseInt(List.id));
+  sayNanaList = sayNanaList.filter((say) => say.zid !== parseInt(List.id));
   saveSayNana();
 }
 
@@ -60,6 +60,7 @@ const savedSayNana = localStorage.getItem(SAY_NANA_KEY);
 
 if (savedSayNana !== null) {
   const parsedSayNana = JSON.parse(savedSayNana);
+
   sayNanaList = parsedSayNana;
   parsedSayNana.forEach(paintSayNana);
 }
