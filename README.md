@@ -1,4 +1,4 @@
-# 바나나 레전드짤 모음집
+# 바나나 레전드짤 모음집 1.0
 
 **저와 함께 살고 있는 귀염둥이, 바나나를 소개합니다 🤭**<br>
 **https://yeyunny.github.io/banana/index.html**
