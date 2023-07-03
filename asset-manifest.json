@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/banana/static/js/main.a0388740.js",
+    "index.html": "/banana/index.html",
+    "main.a0388740.js.map": "/banana/static/js/main.a0388740.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.a0388740.js"
+  ]
+}
